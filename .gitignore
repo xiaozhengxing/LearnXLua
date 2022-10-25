@@ -1,0 +1,16 @@
+.idea
+.vs
+Library
+Logs
+obj
+Packages
+ProjectSettings
+Temp
+UserSettings
+.vsconfig
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+LearnXLua.sln
+*.meta
+Tools
+Plugins
