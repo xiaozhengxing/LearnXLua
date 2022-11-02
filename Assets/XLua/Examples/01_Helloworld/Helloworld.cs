@@ -18,7 +18,11 @@ namespace XLuaTest
         void Start()
         {
             LuaEnv luaenv = new LuaEnv();
-            luaenv.DoString("CS.UnityEngine.Debug.Log('hello world')");
+            //luaenv.DoString("CS.UnityEngine.Debug.Log('hello world')");
+            luaenv.DoString("CS.XLuaTest.Helloworld.func = function(s,b,f) print(s,b,f) end");
+            if (func != null)
+                func("abc", true, 1.0f);
+
             luaenv.Dispose();
         }
 
@@ -26,8 +30,13 @@ namespace XLuaTest
         void Update()
         {
             //System.runtimetyp
-            
         }
+
+        [CSharpCallLua]
+        public delegate void Func(string s, bool b, float f);
+
+        public static Func func;
+            
 
         void TestTest()
         {

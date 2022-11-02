@@ -547,7 +547,7 @@ namespace XLua
                 return bridge;
             }
             try {
-                var ret = getDelegate(bridge, delegateType);
+                var ret = getDelegate(bridge, delegateType);//这里会去DelegatesGensBridge里面去调用GetDelegateByType来确定是否有对应的Delegate
                 bridge.AddDelegate(delegateType, ret);
                 delegate_bridges[reference] = new WeakReference(bridge);
                 return ret;
