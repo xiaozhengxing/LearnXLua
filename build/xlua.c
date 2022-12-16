@@ -160,7 +160,7 @@ LUA_API lua_Number lua_tonumber (lua_State *L, int idx) {
 #define lua_absindex(L, index) ((index > 0 || index <= LUA_REGISTRYINDEX) ? index : lua_gettop(L) + index + 1)
 #endif
 
-LUA_API void xlua_getloaders (lua_State *L) {
+LUA_API void xlua_getloaders (lua_State *L) {//package.loaders, LuaEnv.AddSearcher处调用
 	lua_getglobal(L, "package");
 #if LUA_VERSION_NUM == 501
     lua_getfield(L, -1, "loaders");
